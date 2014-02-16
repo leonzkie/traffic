@@ -10,18 +10,17 @@ class Intersection(models.Model):
 	def __unicode__(self):
 		return u'%s' % self.description
 	
-class Accident(models.Model):
+class Road(models.Model):
 	description = models.CharField(max_length=200)
-	roadID =  models.CharField(max_length=200)
-	datetime = models.DateTimeField()
+	intersection = models.ForeignKey(Intersection, null=True)
 	remarks = models.CharField(max_length=200)
 	
 	def __unicode__(self):
 		return u'%s' % self.description
-
-class Road(models.Model):
+		
+class Accident(models.Model):
 	description = models.CharField(max_length=200)
-	intersection = models.ForeignKey(Intersection, null=True)
+	roadID =  models.ForeignKey(Road, null=True)
 	datetime = models.DateTimeField()
 	remarks = models.CharField(max_length=200)
 	
@@ -30,8 +29,23 @@ class Road(models.Model):
 	
 class Device(models.Model):
 	description = models.CharField(max_length=200)
-	status = models.CharField(max_length=200)
-	roadID = models.CharField(max_length=200)
+	
+	STATUS = (
+		('A','Active'),
+		('IA', 'Inactive'),
+	)
+	TYPE = (
+		('TL','Traffic Light'),
+		('PC','Pedestrian Crossing'),
+		('CC','CCTV'),
+		('TC','Tranceiver'),
+		('PS','Power Supply'),
+		('AC','Accessories'),
+		('ML','Miscellaneous'),
+	)
+	status = models.CharField(max_length=200, choices = STATUS)
+	type = models.CharField(max_length=200, choices = TYPE)
+	roadID =  models.ForeignKey(Road, null=True)
 	remarks = models.CharField(max_length=200)
 	
 	def __unicode__(self):
