@@ -15,6 +15,9 @@ class Accident(models.Model):
 	roadID =  models.CharField(max_length=200)
 	datetime = models.DateTimeField()
 	remarks = models.CharField(max_length=200)
+	
+	def __unicode__(self):
+		return u'%s' % self.description
 
 class Road(models.Model):
 	description = models.CharField(max_length=200)
@@ -22,11 +25,16 @@ class Road(models.Model):
 	datetime = models.DateTimeField()
 	remarks = models.CharField(max_length=200)
 	
+	def __unicode__(self):
+		return u'%s' % self.description
+	
 class Device(models.Model):
 	description = models.CharField(max_length=200)
 	status = models.CharField(max_length=200)
 	roadID = models.CharField(max_length=200)
 	remarks = models.CharField(max_length=200)
 	
+	def __unicode__(self):
+		return u'%s' % self.description
 	
 # Create your models here.
