@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
+
 
 <head>
-<link rel="stylesheet"  type="text/css" href="/static/css/tables.css"">
+<link rel="stylesheet"  type="text/css" href="/static/css/tables.css">
 </head>
-
-<body>
-<table style="width:300px">
+{% extends "base.html" %}
+{% block content %}
 {% if road_list %}
+<table style="width:300px">
 <tr>
 	<td>ID</td>
 	<td>Description</td>
@@ -25,7 +24,6 @@
 {% endfor %}
 </table>
 {% endif %}
+{% endblock content %}
+      
 
-</body>
-
-</html>
