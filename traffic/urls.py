@@ -10,4 +10,5 @@ urlpatterns = patterns('',
 	
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^intersections/$', 'intersections.views.intersections'),
+	url(r'^', 'intersections.views.login_user'),
 )
