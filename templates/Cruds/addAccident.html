@@ -1,0 +1,73 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>New Accident</title>
+  <link rel="stylesheet"  type="text/css" href="/static/css/loginstyle.css">
+</head>
+
+<body>
+
+
+  
+  <section class="container" >
+    
+    <div class="login">
+
+      <h1>ACCIDENT INFORMATION</h1>
+      
+      <form method="post">
+
+	  	
+     
+        <p>
+          <label> ID:</label><br>
+          <input type="number" name="id" value="" placeholder="ID Number">
+         
+        </p>
+        
+        <p>
+          <label> DESC:</label><br>
+          <input type="text" name="desc" value="" placeholder="Description">
+          
+        </p>
+         
+        <p>
+          <label> ROAD ID:</label><br>
+          <input type="number" name="intersection" value="" placeholder="Intersection">
+          
+        </p>
+
+        <p>
+          <label> DATE and TIME:</label><br>
+          <input type="datetime-local" name="cDateTime">
+          
+        </p>
+
+        <p>
+          <label> REMARKS:</label><br>
+          <textarea name ="remarks" placeholder="Comments"></textarea>
+          
+        </p>
+        
+        <p class="submit">
+       
+          <input type="submit" name="Cancel" value="BACK">
+          <input type="submit" name="Add" value="SAVE">
+        
+        </p>
+
+      
+
+      </form>
+	
+    </div>
+	
+
+  </section>
+
+
+
+</body>
+</html>

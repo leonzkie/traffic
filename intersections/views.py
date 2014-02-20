@@ -60,5 +60,29 @@ def devices(request):
 	c = Context({'device_list': device_list,})
 	return HttpResponse(t.render(c))
 
+def newAccident(request):
+	device_list = Device.objects.all()
+	t = loader.get_template('Cruds/addAccident.html')
+	c = Context({'device_list': device_list,})
+	return HttpResponse(t.render(c))
+
+def newDevice(request):
+	device_list = Device.objects.all()
+	t = loader.get_template('Cruds/addDevice.html')
+	c = Context({'device_list': device_list,})
+	return HttpResponse(t.render(c))
+
+def newIntersection(request):
+	device_list = Device.objects.all()
+	t = loader.get_template('Cruds/addIntersection.html')
+	c = Context({'device_list': device_list,})
+	return HttpResponse(t.render(c))
+
+def newRoad(request):
+	device_list = Device.objects.all()
+	t = loader.get_template('Cruds/addRoad.html')
+	c = Context({'device_list': device_list,})
+	return HttpResponse(t.render(c))
+
 def homepage(request):
 	return HttpResponseRedirect('/login/')

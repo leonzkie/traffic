@@ -16,16 +16,7 @@
 	  	{% csrf_token %}
         <p><input type="text" name="username" value="" placeholder="Username"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
-         <p class="remember_me">
-          <label>
-             {% if invalid %}
-				Email/Password is incorrect. 
-				{% endif %}
-			{% if inactive %}
-				User is inactive. 
-	{% endif %} 
-          </label>
-        </p>
+       
 		<p class="submit"><input type="submit" name="commit" value="Login"></p>
       </form>
 	
